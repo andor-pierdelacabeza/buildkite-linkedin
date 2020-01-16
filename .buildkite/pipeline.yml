@@ -1,0 +1,7 @@
+# Ejemplo de despliegue
+steps:
+  - command: "./build.sh"
+    label: "Compilar"
+  - wait
+  - command: "./deploy.sh"
+    label: "Empaquetar"
