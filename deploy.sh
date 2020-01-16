@@ -2,6 +2,9 @@
 FILE=build/objeto.txt
 echo "Empezando despliegue"
 
+mkdir -p build
+buildkite-agent artifact download build/objeto.txt build/
+
 if test -f "${FILE}"; then
     echo "${FILE} existe"
 else
