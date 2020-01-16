@@ -10,3 +10,4 @@ steps:
   - wait
   - command: "./deploy.sh"
     label: "Desplegar"
+    if: build.message =~ /launch deploy/
