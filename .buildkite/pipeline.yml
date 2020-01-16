@@ -6,6 +6,7 @@ steps:
       - "build/*"
   - command: "./test.sh"
     label: "Tests"
+    if: build.message !~ /no test/
   - wait
   - command: "./deploy.sh"
     label: "Desplegar"
