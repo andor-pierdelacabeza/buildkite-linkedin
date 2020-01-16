@@ -2,6 +2,8 @@
 steps:
   - command: "./build.sh"
     label: "Compilar"
+    artifact_paths:
+      - "build/*"
   - wait
   - command: "./deploy.sh"
     label: "Empaquetar"
