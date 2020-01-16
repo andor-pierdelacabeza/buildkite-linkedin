@@ -8,4 +8,4 @@ steps:
     label: "Tests"
   - wait
   - command: "./deploy.sh"
-    label: "Empaquetar"
+    label: "Desplegar"
