@@ -5,6 +5,8 @@ env:
 steps:
   - command: "./build.sh"
     label: "Compilar"
+    artifact_paths:
+      - "build/*"
   - wait
   - command: "./backup.sh"
     label: "Archivado backup"
