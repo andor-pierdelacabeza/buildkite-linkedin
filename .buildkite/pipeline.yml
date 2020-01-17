@@ -1,29 +1,23 @@
-# Ejemplo de dependencias
+# Ejemplo de variables de entorno
+env:
+  "GLOBAL_UNO": "UNO"
+  "GLOBAL_DOS": "DOS"
 steps:
   - command: "./build.sh"
     label: "Compilar"
-    key: "build"
-    artifact_paths:
-      - "build/*"
+  - wait
   - command: "./backup.sh"
     label: "Archivado backup"
-    key: "backup"
-    depends_on: "build"
   - command: "./test.sh functional"
     label: "Tests Funcionales"
-    key: "functional"
-    depends_on: "build"
+    env:
+      "LOCAL_UNO": "UNO"
   - command: "./test.sh unit"
     label: "Tests Unitarios"
-    key: "unit"
-    depends_on: "build"
   - command: "./test.sh load"
     label: "Tests de carga"
-    key: "load"
-    depends_on: "build"
+    env:
+      "LOCAL_DOS": "DOS"
+  - wait
   - command: "./deploy.sh"
     label: "Desplegar"
-    key: "deploy"
-    depends_on:
-      - "unit"
-      - "functional"
