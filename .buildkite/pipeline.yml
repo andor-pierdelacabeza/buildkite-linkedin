@@ -7,8 +7,12 @@ steps:
   - wait
   - command: "./backup.sh"
     label: "Archivado backup"
-  - command: "./test.sh"
-    label: "Tests"
+  - command: "./test.sh functional"
+    label: "Tests Funcionales"
+  - command: "./test.sh unit"
+    label: "Tests Unitarios"
+  - command: "./test.sh load"
+    label: "Tests de carga"
   - wait
   - command: "./deploy.sh"
     label: "Desplegar"
