@@ -1,13 +1,14 @@
-# Ejemplo de despliegue
+# Ejemplo de condicionales
 steps:
   - command: "./build.sh"
     label: "Compilar"
     artifact_paths:
       - "build/*"
+  - wait
+  - command: "./backup.sh"
+    label: "Archivado backup"
   - command: "./test.sh"
     label: "Tests"
-    if: build.message !~ /no test/
   - wait
   - command: "./deploy.sh"
     label: "Desplegar"
-    if: build.message =~ /launch deploy/
