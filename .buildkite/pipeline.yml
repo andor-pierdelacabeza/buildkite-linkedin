@@ -1,4 +1,4 @@
-# Ejemplo de condicionales
+# Ejemplo de dependencias
 steps:
   - command: "./build.sh"
     label: "Compilar"
